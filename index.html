@@ -1,16 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-default>Vite + React + TS</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Surprise - Deliver Emotions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #fff5f7; }
+        .pink-gradient { background: linear-gradient(135deg, #ff7eb9 0%, #ff65a3 100%); }
+    </style>
+</head>
+<body class="text-gray-800">
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-pink-600">Midnight Surprise</h1>
+            <ul class="hidden md:flex space-x-6 font-medium">
+                <li><a href="#" class="hover:text-pink-500">Home</a></li>
+                <li><a href="#" class="hover:text-pink-500">Gifts</a></li>
+                <li><a href="#" class="hover:text-pink-500">Track Order</a></li>
+            </ul>
+            <button class="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600">Contact Us</button>
+        </div>
+    </nav>
+
+    <header class="pink-gradient text-white py-20 px-6 text-center">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Deliver Emotions at Midnight</h2>
+        <p class="text-lg md:text-xl mb-8 opacity-90">Create unforgettable moments with our premium midnight gift delivery service</p>
+        <a href="#shop" class="bg-white text-pink-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:bg-gray-100">Shop Now <i class="fas fa-arrow-right ml-2"></i></a>
+    </header>
+
+    <section id="shop" class="container mx-auto py-16 px-4">
+        <h3 class="text-3xl font-bold text-center mb-12">Our Popular Surprises</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-pink-100">
+                <img src="https://images.unsplash.com/photo-1549462980-6a620041847f?auto=format&fit=crop&q=80&w=400" alt="Gift Box" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Midnight Celebration Box</h4>
+                    <p class="text-gray-600 mb-4">A perfect mix of chocolates, roses, and a personalized card.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-pink-600">৳১৫০০</span>
+                        <button class="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 mt-20">
+        <div class="container mx-auto text-center px-4">
+            <p class="mb-4 text-pink-400 font-bold">Midnight Surprise - Delivering Love in Bangladesh</p>
+            <div class="flex justify-center space-x-6 text-xl mb-6">
+                <a href="#"><i class="fab fa-facebook hover:text-pink-500"></i></a>
+                <a href="#"><i class="fab fa-instagram hover:text-pink-500"></i></a>
+                <a href="#"><i class="fab fa-whatsapp hover:text-pink-500"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2026 Midnight Surprise. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
