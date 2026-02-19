@@ -11,11 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .pink-gradient { background: linear-gradient(135deg, #FF0080 0%, #FF8C00 100%); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
         .product-card { transition: all 0.3s ease; }
-        .product-card:hover { transform: translateY(-10px); shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .product-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(255, 0, 128, 0.15); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade { animation: fadeIn 0.8s ease-out forwards; }
     </style>
@@ -25,7 +24,7 @@
     <nav class="glass-nav fixed w-full z-50 border-b border-pink-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-pink-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-pink-200">
+                <div class="w-10 h-10 bg-pink-600 rounded-xl flex items-center justify-center text-white shadow-lg">
                     <i class="fas fa-moon text-xl"></i>
                 </div>
                 <span class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-orange-500">Midnight Surprise</span>
@@ -33,99 +32,116 @@
             <div class="hidden md:flex space-x-8 font-bold text-slate-600">
                 <a href="#" class="hover:text-pink-600 transition">Home</a>
                 <a href="#gifts" class="hover:text-pink-600 transition">Gifts</a>
-                <a href="https://wa.me/8801XXXXXXXXX" class="hover:text-pink-600 transition">Contact</a>
+                <a href="https://wa.me/8801814790752" class="hover:text-pink-600 transition">Contact</a>
             </div>
-            <a href="https://wa.me/8801XXXXXXXXX" class="bg-pink-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-pink-200 hover:scale-105 transition flex items-center">
+            <a href="https://wa.me/8801814790752" class="bg-pink-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-pink-200 hover:scale-105 transition flex items-center">
                 <i class="fab fa-whatsapp mr-2 text-lg"></i> Order Now
             </a>
         </div>
     </nav>
 
-    <header class="pt-32 pb-20 px-6 bg-slate-50 relative overflow-hidden">
+    <header class="pt-40 pb-24 px-6 bg-slate-50 relative overflow-hidden">
         <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-1/2 animate-fade">
+                <span class="bg-pink-100 text-pink-600 px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">Premium Midnight Delivery</span>
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
                     Deliver <span class="text-pink-600">Love</span> While They Dream.
                 </h1>
-                <p class="text-lg text-slate-600 mb-8 max-w-lg">
-                    আপনার প্রিয়জনের জন্য মাঝরাতের বিশেষ মুহূর্তগুলো আরও রঙিন করে তুলি প্রিমিয়াম গিফট এবং সারপ্রাইজ ডেলিভারির মাধ্যমে।
+                <p class="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    মাঝরাতের বিশেষ মুহূর্তগুলোকে স্মরণীয় করে তুলুন। আমরা পৌঁছে দেব আপনার ভালোবাসা আর আবেগ।
                 </p>
-                <div class="flex gap-4">
-                    <a href="#gifts" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-slate-800 transition">Shop Gifts</a>
-                    <a href="https://facebook.com/midnightsurprise" class="bg-white border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold hover:border-pink-300 transition">Visit Facebook</a>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#gifts" class="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold shadow-xl hover:bg-slate-800 transition">Browse Gifts</a>
+                    <a href="https://wa.me/8801814790752" class="bg-white border-2 border-slate-200 px-10 py-4 rounded-2xl font-bold hover:border-pink-300 transition">Chat with Us</a>
                 </div>
             </div>
             <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-fade" style="animation-delay: 0.2s;">
-                <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=800" class="rounded-[40px] shadow-2xl border-8 border-white" alt="Gift Box">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=800" class="rounded-[40px] shadow-2xl border-8 border-white max-w-sm md:max-w-md" alt="Gift Box">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-pink-50 hidden md:block">
+                        <p class="text-pink-600 font-black text-2xl">100%</p>
+                        <p class="text-slate-500 text-xs font-bold uppercase">On-Time Delivery</p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
     <section id="gifts" class="py-24 container mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-extrabold mb-4">Our Signature Surprises</h2>
-            <p class="text-slate-500">আপনার জন্য বাছাই করা সেরা কিছু গিফট কম্বো</p>
+            <h2 class="text-4xl font-extrabold mb-4 text-slate-900">Our Signature Surprises</h2>
+            <div class="h-1.5 w-24 bg-pink-600 mx-auto rounded-full mb-4"></div>
+            <p class="text-slate-500">আপনার প্রিয়জনের জন্য সেরা গিফট প্যাকেজগুলো এখানে পাবেন।</p>
         </div>
 
-        <div id="product-list" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div class="col-span-full text-center py-20">
                 <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-pink-600 border-t-transparent"></div>
-                <p class="mt-4 text-slate-500 font-bold">Loading Surprises...</p>
+                <p class="mt-4 text-slate-500 font-bold">Bringing Surprises for you...</p>
             </div>
         </div>
     </section>
 
     <footer class="bg-slate-900 text-white py-16">
         <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-extrabold mb-6">Midnight Surprise</h3>
-            <div class="flex justify-center space-x-6 mb-10 text-3xl">
-                <a href="https://facebook.com/midnightsurprise" class="hover:text-pink-500 transition"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com/midnightsurprise" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            <h3 class="text-3xl font-extrabold mb-4">Midnight Surprise</h3>
+            <p class="text-slate-400 mb-10">Delivering Love across Bangladesh since 2026.</p>
+            <div class="flex justify-center space-x-8 mb-12 text-3xl">
+                <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
                 <a href="https://wa.me/8801814790752" class="hover:text-pink-500 transition"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p class="text-slate-500 border-t border-slate-800 pt-10">© 2026 Midnight Surprise. All Rights Reserved.</p>
+            <p class="text-slate-600 text-sm border-t border-slate-800 pt-8">© 2026 Midnight Surprise. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // আপনার .env ফাইল থেকে তথ্যগুলো এখানে হুবহু বসিয়ে দিন
-        const SUPABASE_URL = https://eckhljjdizrnaytchoka.supabase.co;
-        const SUPABASE_ANON_KEY = sb_publishable_ryp4p_Lo_fs3x1ZPEwPoig_tZZfUtLw ';
+        // Your specific Supabase credentials
+        const SUPABASE_URL = 'https://eckhljjdizrnaytchoka.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_ryp4p_Lo_fs3x1ZPEwPoig_tZZfUtLw';
+        const WHATSAPP_NUMBER = '8801814790752';
 
-        const _supabase = supabase.createClient(https://eckhljjdizrnaytchoka.supabase.co,https://eckhljjdizrnaytchoka.supabase.co );
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         async function loadProducts() {
             const { data, error } = await _supabase
-                .from('products') // আপনার টেবিলের নাম 'products' হতে হবে
+                .from('products') 
                 .select('*');
 
             if (error) {
                 console.error('Error:', error);
-                document.getElementById('product-list').innerHTML = '<p class="col-span-full text-center text-red-500">Failed to load products.</p>';
+                document.getElementById('product-list').innerHTML = `
+                    <div class="col-span-full text-center p-10 bg-red-50 rounded-3xl border border-red-100">
+                        <p class="text-red-500 font-bold">ডাটাবেস কানেকশনে সমস্যা হচ্ছে। দয়া করে সুপাবেসে 'products' টেবিলটি চেক করুন।</p>
+                    </div>`;
                 return;
             }
 
             const container = document.getElementById('product-list');
             container.innerHTML = ''; 
 
+            if (data.length === 0) {
+                container.innerHTML = '<p class="col-span-full text-center text-slate-400">No products found. Add some in your database!</p>';
+                return;
+            }
+
             data.forEach(item => {
-                // WhatsApp মেসেজ ফরম্যাট করা
-                const waMessage = encodeURIComponent(`Hi, I want to order: ${item.name}\nPrice: ৳${item.price}`);
+                const waMessage = encodeURIComponent(`সালাম! আমি আপনার ওয়েবসাইট থেকে "${item.name}" অর্ডার করতে চাই। দাম: ৳${item.price}।`);
                 
                 container.innerHTML += `
-                    <div class="product-card bg-white rounded-[32px] p-5 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col">
-                        <img src="${item.image_url}" class="w-full h-72 object-cover rounded-[24px] mb-6" alt="${item.name}">
+                    <div class="product-card bg-white rounded-[40px] p-6 shadow-xl shadow-slate-100/50 border border-slate-50 flex flex-col h-full">
+                        <img src="${item.image_url || 'https://via.placeholder.com/400x300'}" class="w-full h-72 object-cover rounded-[30px] mb-8" alt="${item.name}">
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-2">${item.name}</h3>
-                            <p class="text-slate-500 text-sm mb-6">${item.description}</p>
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">${item.name}</h3>
+                                <span class="bg-pink-50 text-pink-600 font-black text-xl px-4 py-2 rounded-2xl ml-2 whitespace-nowrap">৳${item.price}</span>
+                            </div>
+                            <p class="text-slate-500 text-sm mb-8 leading-relaxed">${item.description || 'No description available.'}</p>
                         </div>
-                        <div class="flex justify-between items-center pt-4 border-t border-slate-50">
-                            <span class="text-2xl font-black text-pink-600">৳${item.price}</span>
-                            <a href="https://wa.me/8801XXXXXXXXX?text=${waMessage}" 
-                               class="bg-slate-900 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-pink-600 transition">
-                                Buy Now
-                            </a>
-                        </div>
+                        <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}" 
+                           class="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold text-lg hover:bg-pink-600 transition flex items-center justify-center">
+                           <i class="fab fa-whatsapp mr-2"></i> Order Now
+                        </a>
                     </div>
                 `;
             });
