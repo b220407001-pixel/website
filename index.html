@@ -3,60 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midnight Surprise - Deliver Emotions</title>
+    <title>Midnight Surprise | Deliver Emotions at Midnight</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #fff5f7; }
-        .pink-gradient { background: linear-gradient(135deg, #ff7eb9 0%, #ff65a3 100%); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fff; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .pink-gradient { background: linear-gradient(135deg, #FF0080 0%, #FF8C00 100%); }
+        .product-card:hover { transform: translateY(-10px); transition: 0.3s; }
+        .hero-pattern { background-image: radial-gradient(#FF0080 0.5px, transparent 0.5px); background-size: 20px 20px; }
     </style>
 </head>
-<body class="text-gray-800">
-    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-pink-600">Midnight Surprise</h1>
-            <ul class="hidden md:flex space-x-6 font-medium">
-                <li><a href="#" class="hover:text-pink-500">Home</a></li>
-                <li><a href="#" class="hover:text-pink-500">Gifts</a></li>
-                <li><a href="#" class="hover:text-pink-500">Track Order</a></li>
-            </ul>
-            <button class="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600">Contact Us</button>
+<body class="bg-slate-50">
+
+    <nav class="glass-nav fixed w-full z-50 border-b border-pink-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center text-white">
+                    <i class="fas fa-gift text-xl"></i>
+                </div>
+                <span class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-orange-500">Midnight Surprise</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold text-slate-700">
+                <a href="#" class="hover:text-pink-600 transition">Home</a>
+                <a href="#gifts" class="hover:text-pink-600 transition">Surprise Gifts</a>
+                <a href="#" class="hover:text-pink-600 transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-shopping-cart text-xl text-slate-600 cursor-pointer hover:text-pink-600"></i>
+                <button class="bg-pink-600 text-white px-6 py-2 rounded-full font-bold shadow-lg shadow-pink-200 hover:scale-105 transition">Order Now</button>
+            </div>
         </div>
     </nav>
 
-    <header class="pink-gradient text-white py-20 px-6 text-center">
-        <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Deliver Emotions at Midnight</h2>
-        <p class="text-lg md:text-xl mb-8 opacity-90">Create unforgettable moments with our premium midnight gift delivery service</p>
-        <a href="#shop" class="bg-white text-pink-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:bg-gray-100">Shop Now <i class="fas fa-arrow-right ml-2"></i></a>
-    </header>
-
-    <section id="shop" class="container mx-auto py-16 px-4">
-        <h3 class="text-3xl font-bold text-center mb-12">Our Popular Surprises</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-pink-100">
-                <img src="https://images.unsplash.com/photo-1549462980-6a620041847f?auto=format&fit=crop&q=80&w=400" alt="Gift Box" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-2">Midnight Celebration Box</h4>
-                    <p class="text-gray-600 mb-4">A perfect mix of chocolates, roses, and a personalized card.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-2xl font-bold text-pink-600">৳১৫০০</span>
-                        <button class="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600">Order Now</button>
+    <section class="relative pt-32 pb-20 overflow-hidden hero-pattern">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left z-10">
+                <span class="bg-pink-100 text-pink-600 px-4 py-1 rounded-full text-sm font-bold tracking-wider uppercase mb-4 inline-block">Surprise someone tonight</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6">
+                    Deliver <span class="text-pink-600">Emotions</span> When Everyone Sleeps.
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg">
+                    আমরা আপনার প্রিয়জনের জন্য মাঝরাতের বিশেষ মুহূর্তগুলো আরও রঙিন করে তুলি প্রিমিয়াম গিফট এবং সারপ্রাইজ ডেলিভারির মাধ্যমে।
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#gifts" class="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold text-center hover:bg-slate-800 transition shadow-xl">Browse Gifts</a>
+                    <a href="#" class="bg-white border-2 border-slate-200 px-10 py-4 rounded-2xl font-bold text-center hover:border-pink-300 transition">How it works?</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 relative">
+                <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=800" class="rounded-3xl shadow-2xl animate-pulse" style="animation-duration: 4s;" alt="Gift">
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-pink-50">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-green-100 p-3 rounded-full text-green-600"><i class="fas fa-truck-fast"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-900">12:00 AM Delivery</p>
+                            <p class="text-sm text-slate-500">Guaranteed On-time</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-10 mt-20">
-        <div class="container mx-auto text-center px-4">
-            <p class="mb-4 text-pink-400 font-bold">Midnight Surprise - Delivering Love in Bangladesh</p>
-            <div class="flex justify-center space-x-6 text-xl mb-6">
-                <a href="#"><i class="fab fa-facebook hover:text-pink-500"></i></a>
-                <a href="#"><i class="fab fa-instagram hover:text-pink-500"></i></a>
-                <a href="#"><i class="fab fa-whatsapp hover:text-pink-500"></i></a>
-            </div>
-            <p class="text-gray-500 text-sm">© 2026 Midnight Surprise. All rights reserved.</p>
+    <section id="gifts" class="py-24 container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Our Signature Surprises</h2>
+            <div class="h-1.5 w-24 bg-pink-600 mx-auto rounded-full"></div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="product-card bg-white rounded-3xl p-4 shadow-xl border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1549462980-6a620041847f?auto=format&fit=crop&q=80&w=600" class="w-full h-64 object-cover rounded-2xl mb-6" alt="Gift">
+                <div class="px-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-pink-600 font-bold uppercase tracking-widest">Premium Combo</span>
+                        <div class="flex text-orange-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Midnight Celebration Box</h3>
+                    <p class="text-slate-500 text-sm mb-6">ফুলের তোড়া, প্রিমিয়াম চকোলেট এবং পার্সোনালাইজড মেসেজ কার্ড।</p>
+                    <div class="flex justify-between items-center border-t border-slate-50 pt-4">
+                        <span class="text-2xl font-extrabold text-slate-900">৳১৫৫০</span>
+                        <button class="bg-pink-50 text-pink-600 px-6 py-2 rounded-xl font-bold hover:bg-pink-600 hover:text-white transition">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-3xl p-4 shadow-xl border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&q=80&w=600" class="w-full h-64 object-cover rounded-2xl mb-6" alt="Gift">
+                <div class="px-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-pink-600 font-bold uppercase tracking-widest">Sweet Surprise</span>
+                        <div class="flex text-orange-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Exotic Chocolate Platter</h3>
+                    <p class="text-slate-500 text-sm mb-6">সেরা মানের আমদানিকৃত চকোলেট দিয়ে সাজানো স্পেশাল প্লেটার।</p>
+                    <div class="flex justify-between items-center border-t border-slate-50 pt-4">
+                        <span class="text-2xl font-extrabold text-slate-900">৳১২০০</span>
+                        <button class="bg-pink-50 text-pink-600 px-6 py-2 rounded-xl font-bold hover:bg-pink-600 hover:text-white transition">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-3xl p-4 shadow-xl border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&q=80&w=600" class="w-full h-64 object-cover rounded-2xl mb-6" alt="Gift">
+                <div class="px-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-pink-600 font-bold uppercase tracking-widest">Decor Box</span>
+                        <div class="flex text-orange-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Midnight Room Decor</h3>
+                    <p class="text-slate-500 text-sm mb-6">আপনার প্রিয়জনের ঘর সাজিয়ে দিব আমরা মাঝরাতের ঠিক আগ মুহূর্তে।</p>
+                    <div class="flex justify-between items-center border-t border-slate-50 pt-4">
+                        <span class="text-2xl font-extrabold text-slate-900">৳২৫০০</span>
+                        <button class="bg-pink-50 text-pink-600 px-6 py-2 rounded-xl font-bold hover:bg-pink-600 hover:text-white transition">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-slate-800 pb-12 mb-10">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-3xl font-extrabold mb-6">Midnight Surprise</h3>
+                <p class="text-slate-400 max-w-sm mb-6">আমরা শুধু উপহার পৌঁছে দেই না, আমরা পৌঁছে দেই আপনার ভালোবাসা আর আবেগ।</p>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="#" class="hover:text-pink-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-pink-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-pink-600"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Quick Links</h4>
+                <ul class="text-slate-400 space-y-4">
+                    <li><a href="#" class="hover:text-white">Shop All Gifts</a></li>
+                    <li><a href="#" class="hover:text-white">Track Your Order</a></li>
+                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Contact Us</h4>
+                <p class="text-slate-400 mb-2"><i class="fas fa-location-dot mr-2"></i> Dhaka, Bangladesh</p>
+                <p class="text-slate-400"><i class="fas fa-phone mr-2"></i> +880 1XXX XXXXXX</p>
+            </div>
+        </div>
+        <p class="text-center text-slate-500 text-sm">© 2026 Midnight Surprise. Crafted for Emotions.</p>
     </footer>
+
 </body>
 </html>
