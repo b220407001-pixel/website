@@ -1,143 +1,116 @@
-import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
-import type { Product } from '../lib/database.types';
-import { useCart } from '../context/CartContext';
+import { useState, useMemo } from 'react';
 import { Filter } from 'lucide-react';
+import { useCart } from '../context/CartContext';
+import { products } from '../data/products';
 
 export default function Shop() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const { addToCart } = useCart();
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  useEffect(() => {
+  const filteredProducts = useMemo(() => {
     if (selectedCategory === 'All') {
-      setFilteredProducts(products);
-    } else {
-      setFilteredProducts(
-        products.filter(product => product.category === selectedCategory)
-      );
+      return products;
     }
-  }, [selectedCategory, products]);
+    return products.filter(p => p.category === selectedCategory);
+  }, [selectedCategory]);
 
-  async function fetchProducts() {
-    try {
-      const { data, error } = await supabase
-        .from('products')
-        .select('*')
-        .order('created_at', { ascending: false });
+  const categories = ['All', ...Array.from(new Set(products.map(p => p.category)))];
 
-      if (error) throw error;
-      setProducts(data || []);
-      setFilteredProducts(data || []);
-    } catch (error) {
-      console.error('Error fetching products:', error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = (product: typeof products[0]) => {
     addToCart({
       id: product.id,
       title: product.title,
       price: product.price,
-      image_url: product.image_url,
+      image_url: product.image,
     });
   };
 
-  const categories = ['All', ...Array.from(new Set(products.map(p => p.category)))];
-
   return (
-    <div className="min-h-screen bg-slate-900 py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-white mb-4">
-            Premium Gift Collection
-          </h1>
-          <p className="text-gray-400 text-lg">
-            Discover the perfect gift for your special moments
-          </p>
-        </div>
+    <div className="bg-slate-950 min-h-screen">
+      {/* Header */}
+      <section className="pt-12 pb-8 px-4 max-w-7xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold text-slate-100 mb-3">
+          Premium Gift Collection
+        </h1>
+        <p className="text-slate-400 text-lg">
+          Choose from {products.length} carefully curated gifts for midnight delivery
+        </p>
+      </section>
 
-        <div className="flex items-center justify-center gap-4 mb-12 flex-wrap">
-          <Filter className="w-5 h-5 text-yellow-500" />
+      {/* Filters */}
+      <section className="px-4 pb-8 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-3 flex-wrap">
+          <Filter className="w-5 h-5 text-pink-500" />
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              className={`px-6 py-2.5 rounded-full font-semibold transition-all ${
                 selectedCategory === category
-                  ? 'bg-yellow-500 text-black'
-                  : 'bg-slate-800 text-gray-300 hover:bg-slate-700'
+                  ? 'bg-gradient-to-r from-pink-600 to-pink-500 text-white shadow-lg shadow-pink-500/50'
+                  : 'bg-white/5 border border-white/20 text-slate-300 hover:bg-white/10 hover:border-white/30'
               }`}
             >
               {category}
             </button>
           ))}
         </div>
+      </section>
 
-        {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map(i => (
-              <div
-                key={i}
-                className="bg-slate-800/50 backdrop-blur-lg rounded-2xl h-96 animate-pulse"
-              ></div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map(product => (
-              <div
-                key={product.id}
-                className="group bg-slate-800/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-slate-700 hover:border-yellow-500/50 transition-all hover:shadow-2xl hover:shadow-yellow-500/20 hover:scale-105"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={product.image_url}
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <span className="text-yellow-500 text-sm font-semibold">
-                    {product.category}
+      {/* Products Grid */}
+      <section className="px-4 pb-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProducts.map(product => (
+            <div
+              key={product.id}
+              className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all hover:shadow-2xl hover:shadow-pink-500/10 hover:scale-105"
+            >
+              <div className="aspect-square overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/80"></div>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                <span className="text-pink-400 text-xs font-semibold uppercase tracking-wide">
+                  {product.category}
+                </span>
+                <h3 className="text-lg font-bold text-slate-100 mt-2 mb-3 line-clamp-2">
+                  {product.title}
+                </h3>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xl md:text-2xl font-bold text-amber-400">
+                    ৳{product.price.toLocaleString()}
                   </span>
-                  <h3 className="text-xl font-bold text-white mt-2 mb-2">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {product.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-yellow-500">
-                      ৳{product.price.toLocaleString()}
-                    </span>
-                    <button
-                      onClick={() => handleAddToCart(product)}
-                      className="bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-400 transition-colors"
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="bg-gradient-to-r from-pink-600 to-pink-500 hover:from-pink-500 hover:to-pink-400 text-white px-3 py-2 rounded-lg font-semibold text-sm transition-all transform hover:scale-105"
+                  >
+                    Add
+                  </button>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-20">
+            <p className="text-slate-400 text-xl">No products found in this category</p>
           </div>
         )}
 
-        {!loading && filteredProducts.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-gray-400 text-xl">No products found in this category</p>
-          </div>
-        )}
-      </div>
+        {/* Product Count */}
+        <div className="text-center mt-16">
+          <p className="text-slate-400">
+            Showing <span className="text-pink-400 font-bold">{filteredProducts.length}</span> of{' '}
+            <span className="text-pink-400 font-bold">{products.length}</span> products
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
